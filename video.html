@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>APRIL MANALO PRANKED YOU 😈</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+      background-color: #000;
+    }
+
+    .watermark {
+      position: absolute;
+      bottom: 12px;
+      right: 16px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      font-family: sans-serif;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <video id="prankVideo" autoplay playsinline controls>
+    <source src="" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="watermark">Raniel Hiyan</div>
+
+  <script>
+    const videos = [
+      "public/relapse1.mp4",
+      "public/relapse2.mp4",
+      "public/relapse3.mp4",
+      "public/relapse4.mp4"
+      
+      
+  ];
+
+    const video = document.getElementById("prankVideo");
+    const rand = Math.floor(Math.random() * videos.length);
+    video.src = videos[rand];
+    video.play().catch(err => {
+      console.warn("Autoplay blocked. User must interact.", err);
+    });
+    video.addEventListener("ended", () => {
+      window.location.href = "index.html"; // balik calculator
+    });
+  </script>
+
+</body>
+</html>
