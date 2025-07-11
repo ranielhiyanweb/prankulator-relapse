@@ -11,5 +11,5 @@ function prank() {
   // Go to video.html where random video will be chosen
   setTimeout(() => {
     window.location.href = "/loading.html";
-  }, 500);
+  }, 100);
 }
