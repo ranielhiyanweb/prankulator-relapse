@@ -30,8 +30,8 @@
     }
 
     .calculator {
-      width: 320px;
-      max-width: 90%;
+      width: 360px;
+      max-width: 95%;
       height: auto;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -55,22 +55,6 @@
       padding: 10px 15px;
       background-color: rgba(0, 0, 0, 0.7);
       color: #00ffcc;
-            display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-
-    #display {
-      width: 100%;
-      height: 60px;
-      border-radius: 15px;
-      border: none;
-      font-size: 28px;
-      text-align: right;
-      padding: 10px 15px;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: #00ffcc;
       margin-bottom: 20px;
       box-shadow: inset 0 0 10px #000;
     }
@@ -78,18 +62,18 @@
     .buttons {
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
     }
 
     button {
       border: none;
-      padding: 18px 0;
-      font-size: 20px;
-      border-radius: 12px;
+      padding: 16px 0;
+      font-size: 18px;
+      border-radius: 10px;
       background: #222;
       color: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.4);
       transition: all 0.2s ease;
     }
 
@@ -98,11 +82,20 @@
       transform: scale(1.05);
     }
 
+    .func {
+      background: #004466;
+    }
+
+    .op {
+      background: #550055;
+    }
+
     .equal {
-      grid-column: span 4;
+      grid-column: span 5;
       background: #00ffcc;
       color: black;
       font-weight: bold;
+      font-size: 20px;
       box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc80;
     }
 
@@ -114,39 +107,49 @@
       font-size: 12px;
       font-style: italic;
     }
+    .Ac{
+      background-color: darkred;
+    }
   </style>
 </head>
 <body>
   <div class="calculator">
-<body>
-  <div class="calculator">
     <input type="text" id="display" readonly />
     <div class="buttons">
+      <button class="func" onclick="append('sin')">sin</button>
+      <button class="func" onclick="append('cos')">cos</button>
+      <button class="func" onclick="append('tan')">tan</button>
+      <button class="func" onclick="append('√')">√</button>
+      <button class="func" onclick="append('^')">x²</button>
+
       <button onclick="append('7')">7</button>
       <button onclick="append('8')">8</button>
       <button onclick="append('9')">9</button>
-      <button onclick="append('+')">+</button>
+      <button class="op" onclick="append('/')">÷</button>
+      <button class="func" onclick="append('π')">π</button>
 
       <button onclick="append('4')">4</button>
       <button onclick="append('5')">5</button>
       <button onclick="append('6')">6</button>
-      <button onclick="append('-')">-</button>
+      <button class="op" onclick="append('*')">×</button>
+      <button class="func" onclick="append('^')">xʸ</button>
 
       <button onclick="append('1')">1</button>
       <button onclick="append('2')">2</button>
       <button onclick="append('3')">3</button>
-      <button onclick="append('x')">×</button>
+      <button class="op" onclick="append('-')">−</button>
+      <button class="func" onclick="append('(')">(</button>
 
       <button onclick="append('0')">0</button>
       <button onclick="append('.')">.</button>
-      <button onclick="clearDisplay()">AC</button>
-      <button onclick="append('/')">÷</button>
+      <button class="Ac" onclick="clearDisplay()">AC</button>
+      <button class="op" onclick="append('+')">+</button>
+      <button class="func" onclick="append(')')">)</button>
 
       <button class="equal" onclick="prank()">=</button>
     </div>
     <div class="watermark">Raniel Hiyan BSIT block - A</div>
-
-   <script src="script.js">script.js</script>
- </body>
+   <script src="script.js"></script>
+ </div>
 </body>
 </html>
